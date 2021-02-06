@@ -5,7 +5,10 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 public class FilmService {
@@ -16,8 +19,17 @@ public class FilmService {
 			new Film("8714le5","Collons q bobos", new Date())
 			));
 	
-	public List<Film> getAllFilms() {
-		return films;
+	private String url = "https://api.themoviedb.org/3/movie/550?api_key=6e9e2f3ab49e2b1cdf0d0850f03e048f";
+	private String urlM = "https://api.themoviedb.org/3/movie/top_rated?api_key=6e9e2f3ab49e2b1cdf0d0850f03e048f&language=en-US&page=1";
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	@GetMapping("/films")
+	public List<Object> getAllFilms() {
+		
+		Object[] allFilms = restTemplate.getForObject(urlM, Object[].class);
+		return Arrays.asList(allFilms);
 	}
 }
 
