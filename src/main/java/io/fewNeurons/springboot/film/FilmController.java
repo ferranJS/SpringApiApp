@@ -3,6 +3,7 @@ package io.fewNeurons.springboot.film;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,12 +17,12 @@ public class FilmController {
 	private FilmService filmService; 
 	
 	@RequestMapping(value="/films", method=RequestMethod.GET)
-	public Object[] getAllFilms() {
+	public ResponseEntity<String> getAllFilms() {
 		return filmService.getAllFilms();
 	}
 	
 	@RequestMapping(value="/films/{id}", method=RequestMethod.GET)
-	public Object[] getFilmById(@PathVariable String id) {
+	public ResponseEntity<String> getFilmById(@PathVariable String id) {
 		return filmService.getAllFilms();
 	}
 }

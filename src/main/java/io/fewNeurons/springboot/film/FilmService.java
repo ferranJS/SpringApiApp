@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,8 +28,14 @@ public class FilmService {
 	private RestTemplate restTemplate;
 	
 	@GetMapping("/films")
-	public Object[] getAllFilms() {
-		return restTemplate.getForObject(urlM, Object[].class);
+	public ResponseEntity<String> getAllFilms() {
+		//restTemplate.getForObject(urlM, Object[].class);
+		
+		ResponseEntity<String> response
+		  = restTemplate.getForEntity(urlM, String.class);
+		//assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
+		
+		return response;
 	}
 }
 
