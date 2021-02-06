@@ -23,6 +23,6 @@ public class FilmController {
 	
 	@RequestMapping(value="/films/{id}", method=RequestMethod.GET)
 	public ResponseEntity<String> getFilmById(@PathVariable String id) {
-		return filmService.getAllFilms();
+		return filmService.getFilmById(id);
 	}
 }

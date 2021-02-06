@@ -27,15 +27,22 @@ public class FilmService {
 	@Autowired
 	private RestTemplate restTemplate;
 	
-	@GetMapping("/films")
 	public ResponseEntity<String> getAllFilms() {
 		//restTemplate.getForObject(urlM, Object[].class);
 		
 		ResponseEntity<String> response
 		  = restTemplate.getForEntity(urlM, String.class);
-		//assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
 		
-		return response;
+		return restTemplate.getForEntity(urlM, String.class);
+	}
+	
+	public ResponseEntity<String> getFilmById(String id) {
+		//restTemplate.getForObject(urlM, Object[].class);
+		
+		ResponseEntity<String> response
+		  = restTemplate.getForEntity(urlM, String.class);
+		
+		return restTemplate.getForEntity(urlM, String.class);
 	}
 }
 
