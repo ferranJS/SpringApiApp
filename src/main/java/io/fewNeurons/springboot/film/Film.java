@@ -2,6 +2,9 @@ package io.fewNeurons.springboot.film;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties
 public class Film {
 
 	private String id;
