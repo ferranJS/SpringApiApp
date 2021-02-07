@@ -44,30 +44,34 @@ public class FilmService {
 		return films;
 	}
 	
+	//Devuelve una lista con las películas mejor puntuadas al controller
 	public List<Film> getTopFilms(String lang, int pag) {
 		String url = "https://api.themoviedb.org/3/movie/top_rated?api_key="+key+"&language="+lang+"&page="+pag;
 		
 		return getFilmList(url);
 	}
 	
+	//Devuelve una lista con las próximas películas ya anunciadas al controller
 	public List<Film> getUpcomingFilms(String lang, int pag) {
 		String url = "https://api.themoviedb.org/3/movie/upcoming?api_key="+key+"&language="+lang+"&page="+pag;
 
 		return getFilmList(url);
 	}
 	
+	//Devuelve una lista con las películas en cartelera al controller
 	public List<Film> getFilmsInTheatres(String lang, int pag) {
 		String url = "https://api.themoviedb.org/3/movie/now_playing?api_key="+key+"&language="+lang+"&page="+pag;
 
 		return getFilmList(url);
 	}
 	
+	//Devuelve una lista con películas similares a la actual al controller
 	public List<Film> getSimilarFilms(String id, String lang, int pag) {
 		String url = "https://api.themoviedb.org/3/movie/"+id+"/similar?api_key="+key+"&language="+lang+"&page="+pag;
 
 		return getFilmList(url);
 	}
-	
+	//Devuelve una película según la id al controller al controller
 	public Film getFilmById(String id, String lang, int pag) {
 		String url = "https://api.themoviedb.org/3/movie/"+id+"?api_key="+key+"&language="+lang;
 		String jsonString = restTemplate.getForEntity(url, String.class).getBody();

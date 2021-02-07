@@ -15,6 +15,7 @@ public class FilmController {
 	@Autowired
 	private FilmService filmService; 
 	
+	//Devuelve una lista con las películas mejor puntuadas
 	@GetMapping(value="/films/top")
 	public List<Film> getTopFilms(@RequestParam(required=false, name="lang") String lang,
 									@RequestParam(required=false, name="pag") Integer pag) {
@@ -27,6 +28,7 @@ public class FilmController {
 		return filmService.getTopFilms(langc, pagc);
 	}
 	
+	//Devuelve una lista con las próximas películas ya anunciadas
 	@GetMapping(value="/films/upcoming")
 	public List<Film> getUpcomingFilms(@RequestParam(required=false, name="lang") String lang,
 			  							@RequestParam(required=false, name="pag") Integer pag) {
@@ -40,6 +42,7 @@ public class FilmController {
 		return filmService.getUpcomingFilms(langc, pagc);
 	}
 	
+	//Devuelve una lista con las películas en cartelera
 	@GetMapping(value="/films/in_theatres/")
 	public List<Film> getFilmsInTheatres(@RequestParam(required=false, name="lang") String lang,
 										  @RequestParam(required=false, name="pag") Integer pag) {
@@ -52,6 +55,7 @@ public class FilmController {
 		return filmService.getFilmsInTheatres(langc, pagc);
 	}
 
+	//Devuelve una película según la id
 	@GetMapping(value="/film/{id}")
 	public Film getFilmById(@PathVariable String id,
 							@RequestParam(required=false, name="lang") String lang,
@@ -65,6 +69,7 @@ public class FilmController {
 		return filmService.getFilmById(id, langc, pagc);
 	}
 	
+	//Devuelve una lista con películas similares a la actual
 	@GetMapping(value="/film/{id}/similar_films")
 	public List<Film> getSimilarFilms(@PathVariable String id,
 										@RequestParam(required=false, name="lang") String lang,
