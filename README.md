@@ -6,7 +6,9 @@ Little program which exposes a REST movie API of few methods built with Spring B
 
 ## Build and Run
 
-In the main folder: `$ ./mvnw clean install` then `$ java -jar target/pelis-api-0.0.1-SNAPSHOT.jar`
+In the main folder: `$ ./mvnw clean install` then `$ java -jar target/pelis-api-0.0.1-SNAPSHOT.jar` 
+Response in `http://localhost:4202/..`  
+(Example: `http://localhost:4202/film/335984/similar_films`)
 
 
 ## Versions
