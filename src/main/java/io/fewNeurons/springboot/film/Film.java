@@ -63,6 +63,14 @@ public class Film {
 		this.release_String = release_String;
 	}
 
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
 	public String getOriginal_language() {
 		return original_language;
 	}
