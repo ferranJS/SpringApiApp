@@ -10,14 +10,14 @@ In the main folder: `$ ./mvnw clean install` then `$ java -jar target/pelis-api-
 Response in `http://localhost:4200/..`  
 (Example: `http://localhost:4200/films/335984/similar_films?pag=2&lang=fr-FR`)
 
-User: User
-
-Password: password    (to make it random everytime you run the program, delete de value from **spring.security.user.password** in application.properties)
+User: User  
+Password: password    
+(to make it random everytime you run the program, delete de value from **spring.security.user.password** in application.properties)
 
 
 ## Versions
 
-Java 15.0.2
+Java 15.0.2  
 SpringBoot 2.4.2    
 Dependencies in the `pom.xml`
 
