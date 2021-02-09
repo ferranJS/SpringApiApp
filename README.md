@@ -11,7 +11,8 @@ Response in `http://localhost:4200/..`
 (Example: `http://localhost:4200/films/335984/similar_films?pag=2&lang=fr-FR`)
 
 User: User
-Password: password (to make it random everytime you run the program, delete de value from **spring.security.user.password** in application.properties)
+
+Password: password    (to make it random everytime you run the program, delete de value from **spring.security.user.password** in application.properties)
 
 
 ## Versions
