@@ -26,7 +26,7 @@ public class FilmController {
 	@ResponseBody
 	@CrossOrigin(origins = "http://localhost:4202", allowedHeaders = "*")
 	public List<Film> getTopFilms(@RequestParam(required=false, name="lang", defaultValue="es-ES") String lang,
-									@RequestParam(required=false, name="pag", defaultValue="1") Integer pag) {
+									@RequestParam(required=false, name="pag", defaultValue="1") String pag) {
 		
 		return filmService.getTopFilms(lang, pag);
 	}
@@ -36,7 +36,7 @@ public class FilmController {
 	@ResponseBody
 	@CrossOrigin(origins = "http://localhost:4202", allowedHeaders = "*")
 	public List<Film> getUpcomingFilms(@RequestParam(required=false, name="lang", defaultValue="es-ES") String lang,
-			  							@RequestParam(required=false, name="pag", defaultValue="1") Integer pag) {
+			  							@RequestParam(required=false, name="pag", defaultValue="1") String pag) {
 		
 		return filmService.getUpcomingFilms(lang, pag);
 	}
@@ -46,7 +46,7 @@ public class FilmController {
 	@ResponseBody
 	@CrossOrigin(origins = "http://localhost:4202", allowedHeaders = "*")
 	public List<Film> getFilmsInTheatres(@RequestParam(required=false, name="lang", defaultValue="es-ES") String lang,
-										  @RequestParam(required=false, name="pag", defaultValue="1") Integer pag) {
+										  @RequestParam(required=false, name="pag", defaultValue="1") String pag) {
 
 		return filmService.getFilmsInTheatres(lang, pag);
 	}
@@ -57,7 +57,7 @@ public class FilmController {
 	@CrossOrigin(origins = "http://localhost:4202", allowedHeaders = "*")
 	public Film getFilmById(@PathVariable String id,
 							@RequestParam(required=false, name="lang", defaultValue="es-ES") String lang,
-							  @RequestParam(required=false, name="pag", defaultValue="1") Integer pag) {
+							  @RequestParam(required=false, name="pag", defaultValue="1") String pag) {
 
 		return filmService.getFilmById(id, lang, pag);
 	}
@@ -68,7 +68,7 @@ public class FilmController {
 	@CrossOrigin(origins = "http://localhost:4202", allowedHeaders = "*")
 	public List<Film> getSimilarFilms(@PathVariable String id,
 										@RequestParam(required=false, name="lang", defaultValue="es-ES") String lang,
-										  @RequestParam(required=false, name="pag", defaultValue="1") Integer pag) {
+										  @RequestParam(required=false, name="pag", defaultValue="1") String pag) {
 	
 		return filmService.getSimilarFilms(id, lang, pag);
 	}
