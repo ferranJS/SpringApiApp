@@ -1,0 +1,5 @@
+io\fewNeurons\springboot\PelisApp.class
+io\fewNeurons\springboot\film\Film.class
+io\fewNeurons\springboot\expose\ExposeController.class
+io\fewNeurons\springboot\film\FilmController.class
+io\fewNeurons\springboot\film\FilmService.class
